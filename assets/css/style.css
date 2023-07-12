@@ -600,6 +600,10 @@ nav ul li a:hover {
   transform: translate(-50%, -50%);
   right: 0;
 }
+:root {
+  --top-value: calc(100% * var(--data-id));
+}
+
 .eachinnoSlider {
   margin-bottom: 30px;
   position: absolute;
@@ -1578,5 +1582,6 @@ nav ul li a:hover {
 }
 .active-innov {
   opacity: 1;
+  top: 0;
   /*transform: translateY(0%);*/
 }

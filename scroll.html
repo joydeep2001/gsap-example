@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./assets/css/jquery.fancybox.min.css" />
+    <title>Document</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      .fullscreen {
+        height: 100vh;
+        width: 100vw;
+      }
+      .text-xxl {
+        font-size: 100px;
+      }
+      .center {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      .bg-grey {
+        background: #f1f1f1;
+      }
+      .bg-blue-100 {
+        background-color: rgb(213, 241, 241);
+      }
+      .bg-green {
+        background-color: cadetblue;
+      }
+      .flex {
+        display: flex;
+      }
+      .flex-1 {
+        flex: 1;
+      }
+      .fullsize {
+        height: 100%;
+        width: 100%;
+      }
+      img {
+        object-fit: content;
+        width: 100%;
+        height: 100%;
+      }
+      .overflow-hidden {
+        overflow: hidden;
+      }
+      * {
+        box-sizing: border-box;
+      }
+      :root {
+        --blue--: #2b82cf;
+        --red--: #b20e34;
+        --yellow--: #ffd166;
+      }
+      body {
+        margin: 0 auto;
+        font-family: Arial, Helvetica, sans-serif;
+      }
+      .wrapper {
+        width: 100vw;
+        height: 300vh;
+        margin: 0 auto;
+        display: flex;
+        flex-flow: row nowrap;
+        box-sizing: content-box;
+      }
+      .mask {
+        height: 100vh;
+        overflow: hidden;
+      }
+      .column {
+        display: flex;
+        flex-flow: column nowrap;
+        transition: all 0.5s ease-in;
+        position: relative;
+      }
+      .right.column {
+        flex-direction: column-reverse;
+        position: relative;
+      }
+      .left {
+        width: 35%;
+      }
+      .right {
+        width: 65%;
+        transform: translateY(-200vh);
+      }
+      .content {
+        display: flex;
+        flex-flow: column nowrap;
+        align-content: center;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        position: relative;
+      }
+      .content h2 {
+        color: white;
+        font-weight: 600;
+        font-size: 50px;
+      }
+      .content p {
+        font-size: 18px;
+        color: white;
+      }
+      .content a {
+        background-color: white;
+        padding: 10px 30px;
+        border-radius: 25px;
+        text-decoration: none;
+      }
+      .first {
+        background-color: var(--blue--);
+      }
+      .first a {
+        color: var(--blue--);
+      }
+      .second {
+        background-color: var(--red--);
+      }
+      .second a {
+        color: var(--red--);
+      }
+      .third {
+        background-color: var(--yellow--);
+      }
+      .third a {
+        color: var(--yellow--);
+      }
+      .pic {
+        width: 100%;
+        height: 100%;
+        background-size: cover;
+        position: relative;
+      }
+      .right .first {
+        background-image: url(https://github.com/webDaeve/verticalslider/blob/main/mountain-3948461_1920.jpg?raw=true);
+      }
+      .right .second {
+        background-image: url(https://github.com/webDaeve/verticalslider/blob/main/29970171536_191e725da1_k.jpg?raw=true);
+      }
+      .right .third {
+        background-image: url(https://github.com/webDaeve/verticalslider/blob/main/johnny-mcclung-uYTKzVp8loQ-unsplash.jpg?raw=true);
+      }
+    </style>
+  </head>
+  <!-- 201940602252 -->
+  <body>
+    <section class="fullscreen center text-xxl bg-grey">1</section>
+    <section class="fullscreen center text-xxl bg-blue-100">2</section>
+    <section class="fullscreen aos bg-blue overflow-hidden">
+      <div class="wrapper">
+        <div class="left column">
+          <!--content 1-->
+          <div class="content first">
+            <h2>Blue Iceberg</h2>
+            <p>Get cool with blue</p>
+            <a href="#" role="button">more</a>
+          </div>
+
+          <!--content 2-->
+          <div class="content second">
+            <h2>Crimson Spring</h2>
+            <p>Red is not a crime</p>
+            <a href="#" role="button">more</a>
+          </div>
+
+          <!--content 3-->
+          <div class="content third">
+            <h2>Mida's Heir</h2>
+            <p>Be more with a touch</p>
+            <a href="#" role="button">more</a>
+          </div>
+        </div>
+        <div class="right column">
+          <div class="pic first"></div>
+          <div class="pic second"></div>
+          <div class="pic third"></div>
+        </div>
+      </div>
+    </section>
+    <section class="fullscreen center text-xxl bg-green">4</section>
+    <script src="./assets/js/jquery.min.js"></script>
+    <script src="./assets/js/jquery.fancybox.min.js"></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/typed.js/2.0.11/typed.min.js"
+      integrity="sha512-BdHyGtczsUoFcEma+MfXc71KJLv/cd+sUsUaYYf2mXpfG/PtBjNXsPo78+rxWjscxUYN2Qr2+DbeGGiJx81ifg=="
+      crossorigin="anonymous"
+    ></script>
+    <script src="./assets/js/slick.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.0/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollToPlugin.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.0/ScrollTrigger.min.js"></script>
+    <script src="./assets/js/customScroll3.js"></script>
+  </body>
+</html>
