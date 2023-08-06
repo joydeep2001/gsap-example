@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Bootstrap Example</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"
+    />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      .container {
+        width: 100vw;
+        height: 100vh;
+        overflow: hidden;
+        padding: 0;
+        position: relative;
+      }
+      .carousel-control {
+        position: absolute;
+        left: 0;
+        top: 80%;
+      }
+      #next,
+      #prev {
+        width: 100%;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div id="myCarousel" class="carousel slide" data-ride="carousel">
+        <!-- Indicators -->
+        <!-- <ol class="carousel-indicators">
+          <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+          <li data-target="#myCarousel" data-slide-to="1"></li>
+          <li data-target="#myCarousel" data-slide-to="2"></li>
+        </ol> -->
+
+        <!-- Wrapper for slides -->
+        <div class="carousel-inner">
+          <div class="item active">
+            <img
+              src="https://www.w3schools.com/bootstrap/la.jpg"
+              alt="Los Angeles"
+              style="width: 100%"
+            />
+          </div>
+
+          <div class="item">
+            <img
+              src="https://www.w3schools.com/bootstrap/chicago.jpg"
+              alt="Chicago"
+              style="width: 100%"
+            />
+          </div>
+
+          <div class="item">
+            <img
+              src="	https://www.w3schools.com/bootstrap/ny.jpg"
+              alt="New york"
+              style="width: 100%"
+            />
+          </div>
+        </div>
+
+        <!-- Left and right controls -->
+        <div class="left carousel-control" href="#myCarousel" data-slide="prev">
+          <button id="prev" type="button" class="btn btn-primary">
+            Previous
+          </button>
+        </div>
+        <div
+          class="right carousel-control"
+          href="#myCarousel"
+          data-slide="next"
+        >
+          <button id="next" type="button" class="btn btn-primary">Next</button>
+        </div>
+      </div>
+    </div>
+    <script>
+      document.onload = () => {};
+      $(".carousel").carousel({
+        interval: false,
+      });
+      const prevBtn = document.querySelector(".left");
+      const nextBtn = document.querySelector(".right");
+      const sliderDetails = [
+        {
+          data: "Slide 1",
+        },
+        {
+          data: "Slide 2",
+        },
+        {
+          data: "Slide 3",
+        },
+      ];
+      let currentSlider = 0;
+      function setPrevBtnText() {
+        if (currentSlider === 0) {
+          prevBtn.classList.add("hidden");
+          return;
+        }
+        prevBtn.classList.remove("hidden");
+        prevBtn.querySelector("button").innerHTML =
+          sliderDetails[currentSlider - 1].data;
+      }
+      function setNextBtnText() {
+        if (currentSlider === sliderDetails.length - 1) {
+          nextBtn.classList.add("hidden");
+          return;
+        }
+        nextBtn.classList.remove("hidden");
+        nextBtn.querySelector("button").innerHTML =
+          sliderDetails[currentSlider + 1].data;
+      }
+
+      prevBtn.addEventListener("click", () => {
+        currentSlider--;
+        setNextBtnText();
+        setPrevBtnText();
+      });
+      nextBtn.addEventListener("click", () => {
+        currentSlider++;
+        setNextBtnText();
+        setPrevBtnText();
+      });
+      setNextBtnText();
+      setPrevBtnText();
+    </script>
+  </body>
+</html>
